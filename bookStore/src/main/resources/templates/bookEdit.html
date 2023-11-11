@@ -9,14 +9,22 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
-<title>Book Store</title>
+<title>Bakery Shope</title>
+<style>
+  body {
+    background-image: url('/images/cake.jpg'); /* Adjust the path to your image file */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fix the background image in place */
+  }
+</style>
 </head>
 <body>
 
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand text-white" href="#">Book Store</a>
+			<a class="navbar-brand text-white" href="#">Bakery Shope</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -28,30 +36,28 @@
 					<li class="nav-item"><a class="nav-link active text-white"
 						aria-current="page" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link text-white"
-						href="available_books">Available Books</a></li>
-					<li class="nav-item"><a class="nav-link text-white" href="my_books">My
-							Books</a></li>
+						href="available_books">Menu Cart</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="my_books">Add to Card</a></li>
 				</ul>
 				<div>
-					<a class="nav-link text-white" href="book_register">New Book
-						Register</a>
+					<a class="nav-link text-white" href="book_register">Let's Bake</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 
-	<div class="container my-5 p-5" style="border:1px solid black;">
-		<h4 class="text-center">Edit Book Here</h4>
+	<div class="container my-5 p-5" style="border:1px solid black; background-color: rgb(162, 255, 224);">
+		<h4 class="text-center">Edit Recipe</h4>
 		<form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${book}">
 			
 			<input type="hidden" name="id" th:value="${book.id}"/>
 			<div class="mb-3">
-				<label for="name" class="form-label">Name
+				<label for="name" class="form-label">Recipe Name
 					</label> <input type="text" class="form-control" name="name" th:value="${book.name}">	
 			</div>
 			
 			<div class="mb-3">
-				<label for="author" class="form-label">Author
+				<label for="author" class="form-label">Chef Name
 					</label> <input type="text" class="form-control" name="author" th:value="${book.author}">	
 			</div>
 			<div class="mb-3">
